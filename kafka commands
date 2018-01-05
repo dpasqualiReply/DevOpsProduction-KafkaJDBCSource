@@ -1,0 +1,8 @@
+#delete topic
+kafka-topics --delete --zookeeper localhost:2181 --topic <nome-topic>
+
+#consumer
+kafka-console-consumer --new-consumer --bootstrap-server localhost:9092 --topic psql-m20-<nometabella> --from-beginning
+
+#kill process on zookeeper port
+fuser -k 2181/tcp
