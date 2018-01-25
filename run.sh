@@ -5,7 +5,7 @@ STANDALONE_CONFIG="$baseDir/config/connect-avro-standalone.properties"
 CONNECTOR="$baseDir/config/source-quickstart-sqlite.properties"
 
 #JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.151-5.b12.el7_4.x86_64/jre
-JAVA_HOME=
+JAVA_HOME=/usr/lib/jvm/jre-1.8.0/
 JMX_PORT=18087
 
 for file in $baseDir/libs/*.jar;
