@@ -1,3 +1,4 @@
+#!/bin/sh -
 baseDir=$(dirname $0)
 MAIN_CLASS="org.apache.kafka.connect.cli.ConnectStandalone"
 DISTRIBUTED_CONFIG="$baseDir/config/connect-distributed.properties"
@@ -57,6 +58,8 @@ if [ -z "$KAFKA_JVM_PERFORMANCE_OPTS" ]; then
 fi
 
 #rm config/connectm20.offsets
+
+echo $JAVA $KAFKA_HEAP_OPTS $KAFKA_JVM_PERFORMANCE_OPTS $KAFKA_JMX_OPTS $KAFKA_LOG4J_OPTS -cp $CLASSPATH $MAIN_CLASS $STANDALONE_CONFIG $CONNECTOR
 
 exec $JAVA $KAFKA_HEAP_OPTS $KAFKA_JVM_PERFORMANCE_OPTS $KAFKA_JMX_OPTS $KAFKA_LOG4J_OPTS -cp $CLASSPATH $MAIN_CLASS $STANDALONE_CONFIG $CONNECTOR
 
